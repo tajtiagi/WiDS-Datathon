@@ -1,0 +1,20 @@
+### r ###
+ggplot2 Cheatsheet( ha már megvan az adat csak a plot összerakás kell, ebben egyébként chatgpt elég király)
+  https://github.com/rstudio/cheatsheets/blob/main/data-visualization.pdf 
+
+alaposabb ggplot leírás:
+  https://www.analyticsvidhya.com/blog/2022/03/a-comprehensive-guide-on-ggplot2-in-r/#h-customization-in-ggplot2-in-r
+
+Data to Viz (segít adatstruktúra alapján chart típust választani)
+  https://www.data-to-viz.com/ 
+
+### python ###
+Seaborn chart cheatsheet
+  https://www.kaggle.com/code/themlphdstudent/cheat-sheet-seaborn-charts
+
+Data to Viz (segít adatstruktúra alapján chart típust választani)
+  https://www.data-to-viz.com/ 
+
+### ha appot kell építeni ###
+Altair app demo: https://altair-viz.github.io/altair-tutorial/notebooks/02-Simple-Charts.html
+Streamlit docs: https://docs.streamlit.io/develop/api-reference

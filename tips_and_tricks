@@ -1,0 +1,3 @@
+### VSCode + R ###
+VSCode-ban is lehet R-t futtatni, ha egyszerre dolgoznál a két nyelvben de csak egy editort akarsz használni.
+q()-al lehet kilépni az r környezetből mielőtt visszatérsz pythonozni

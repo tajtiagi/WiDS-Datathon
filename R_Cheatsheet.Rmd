@@ -1,0 +1,153 @@
+---
+title: "Cheatsheet"
+output: html_document
+date: "2025-03-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Environment
+```{r}
+rm(a,b)  	# Delete a and b from the environment
+rm(list=ls()) # Delete everything, we created from the environment
+
+setwd("C:/Users/Eszter Kaló/Documents/Network")
+```
+
+# Importing and exporting data
+```{r}
+df <- read.csv('file.csv')
+df <- readRDS("your_file.RDS")
+df <- read_sav("file.sav")
+df <- read.tabl()
+
+library(readxl)
+df <- read_excel("your_file.xlsx")
+
+# Write CSV
+write.csv(mytable,"mytable.csv")
+```
+
+# Rename stuff and change values
+```{r}
+new_df <- old_df # Makes a new df, the old stays
+
+df$variable1[is.na(df$variable1)] <- 0  # Changes NAs to 0 value
+df$variable1[df$variable1 == 1] <- 2  # Changes variable value from 1 to 2
+
+# Change values to NA in multiple columns (from variable1 to variable24)
+columns_to_change <- paste0("variable", 1:24)
+df[columns_to_change] <- lapply(df[columns_to_change], function(x) ifelse(x == 999, NA, x))
+```
+
+# Explore basics
+```{r}
+# Data frame
+summary(your_dataframe)
+str(your_dataframe)  # Shows structure (variable types and first few values)
+glimpse(your_dataframe)  # dplyr; Provides a similar but cleaner output
+colSums(is.na(your_dataframe)) # For missing values
+
+# Variable
+summary(df$variable1) # Statistics
+str(df$variable1) # Type
+sum(is.na(df$variable1)) # Missing
+unique(df$variable_name) # Unique variable values
+table(df$variable1, useNA = "ifany") # This will count how many of each values are present.Only for category.
+```
+
+# Filter
+```{r}
+df_filtered <- df %>% select(variable1, variable2)  # dplyr; Data frame with variables from another data frame
+```
+
+# Merge and join
+```{r}
+df_filtered <- merge(df_filtered, df[, c("ID", "variable1")], by = "ID", all.x = TRUE)  # Merge variable 
+df_merged <- merge(df_one, df_two, by.x = "ID", by.y = "id", all.y = TRUE) # Merge tables, dataframes
+df_joined <- left_join(df_one, df_two, by = c("variable1" = "variable2")) # Left join, x table we keep (here df_one)
+```
+
+# For loop
+```{r}
+for (i in 1:length(v)) {
+  if (v[i] == "Pityu" ){
+  print("Itt van Pityu")
+  } else {
+  print("Ez valójában nem Pityu")
+  }
+}
+```
+
+# Function
+```{r}
+
+diszk <-function(a,b,c){
+      b^2-4*a*c
+}
+
+megoldas <- function(a,b,c) {
+  if(diszk(a,b,c) > 0){ # first case D>0
+        x_1 = (-b+sqrt(diszk(a,b,c)))/(2*a)
+        x_2 = (-b-sqrt(diszk(a,b,c)))/(2*a)
+        result = c(x_1,x_2)
+        print(result)
+  }
+  else if(diszk(a,b,c) == 0){ # second case D=0
+        x = -b/(2*a)
+        print(x)
+  }
+  else {"Nincs megoldás a racionális számok halmazán."} # third case D<0
+}
+
+
+megoldas(1,-6,-16)
+```
+
+# Plots
+```{r}
+boxplot(affairs$naffairs~affairs$ratemarr,
+        main = "Rate of marriage vs Nbr affairs",
+        col="blue",
+        xlab = "Rate of marriage",
+        ylab = "Number of affairs")
+```
+
+```{r}
+barplot(table(affairs$naffairs), main="Affair distribution")
+
+ggplot(pressure, aes(x=temperature, y=pressure)) + geom_line() + geom_point()
+```
+
+```{r}
+#alap
+affairs_m %>% 
+  ggplot(aes(x=educ, y=age)) + 
+  geom_point() 
+
+#extrásabb
+affairs_m %>% 
+  ggplot(aes(x=educ, y=age, color=naffairs)) + 
+  geom_point(shape = 16, size = 5) +
+  labs(x="Education",y="Age")+
+  theme(axis.title = element_text(face="bold",size=14))
+
+#még extrásabb
+affairs_m %>% 
+  ggplot(aes(x=educ, y=age, color=naffairs)) + 
+  geom_smooth(method = "loess", se=FALSE, color="red")+
+  geom_smooth(method = "lm", se=FALSE, color="forestgreen")+
+  geom_point(shape = 16, size = 5) +
+  labs(x="Education",y="Age")+
+  theme(axis.title = element_text(face="bold",size=14))
+```
+
+```{r}
+ggplot(data.frame(x=c(0, 20)), aes(x=x)) + stat_function(fun=myfun, geom="line")
+```
+
+```{r}
+
+```

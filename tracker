@@ -1,14 +1,16 @@
 ## FELOSZTÁS ##
 válaszzatok emojit, mert (szerintem) feldobja a dolgokat és könnyebb megtalálni hol vagytok említve
 🦆 - Bori
+🍎 - Ági
+
 
 
 ## RESOURCES ##
 ### Kaggle ###
  Workshops:
   1: https://www.youtube.com/watch?v=Lp-4rtCEVKY 17p 🦆
-  2:https://www.youtube.com/watch?v=gicfuCLuosA 57p
-  3:https://www.youtube.com/watch?v=yGoLwclZyQw 55p
+  2: https://www.youtube.com/watch?v=gicfuCLuosA 57p
+  3: https://www.youtube.com/watch?v=yGoLwclZyQw 55p
 
 Kaggle page: https://www.kaggle.com/competitions/widsdatathon2025
   See the original dataset structure
@@ -19,10 +21,13 @@ Sok additional cucc https://docs.google.com/document/d/1paeo9f4Gz0l3sBJN9-VJQPzo
   Domain context
   Dataset resources
   Additional rengetegminden
+  Egy elég részletes EDA: https://www.kaggle.com/code/tarundirector/adhd-pred-cv-0-83-detailed-eda-modelling#notebook-container
+  Első helyezett notebook: https://www.kaggle.com/code/nguyennguyen599/wids-2025-1st-place-solution?scriptVersionId=237447151
 
 ## TODOS ##
-Átnézni amik előjöhetnek:
-- how to github 
+Átnézni, amik előjöhetnek:
+- how to github
+    - https://www.youtube.com/watch?v=a9u2yZvsqHA
 - how to datathon (technikák + stratégiák + feladatfelosztás)
 - ML optimalizáció, ellenőrzés
 - programnyelvek (python + R + adatviz + SQL)
